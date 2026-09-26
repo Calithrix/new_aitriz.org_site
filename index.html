@@ -3,19 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Altshuller Institute for TRIZ</title>
+  <title>The Altshuller Institute for TRIZ Studies</title>
+  <meta name="description" content="Learn to innovate and improve systems more efficiently. Stop using trial and error to learn how to create. Use TRIZ!">
+  <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:wght@600&display=swap">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <div class="banner">Board prototype — not the live site</div>
+  <div class="utility">
+    <div class="wrap">
+      <span class="utility-contact">100 Barber Avenue, Worcester, MA 01606 &nbsp;·&nbsp; <a href="tel:+15087996601">508-799-6601</a></span>
+      <span class="proto">Board prototype</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">
-        <span class="brand-mark">AITRIZ</span>
-        <span class="brand-name">The Altshuller Institute</span>
+        <img src="assets/brand/ai-logo.png" alt="" width="46" height="46">
+        <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
       </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation"><span></span></label>
       <nav class="nav" aria-label="Primary">
         <a href="pages/triz.html">TRIZ</a>
         <a href="pages/events.html">Events</a>
@@ -23,51 +34,285 @@
         <a href="pages/membership.html">Membership</a>
         <a href="pages/library.html">Library</a>
         <a href="pages/about.html">About</a>
+        <a class="nav-cta" href="pages/membership.html#join">Join</a>
       </nav>
     </div>
   </header>
+
   <main>
-    <section class="hero">
+    <!-- Hero: wording and background image come from the live home page slider -->
+    <section class="hero" style="background-image:url('assets/banners/hero-home.jpg');background-position:right center">
       <div class="wrap">
-        <p class="kicker">Systematic innovation</p>
-        <h1>Stop learning to innovate through trial and error.</h1>
-        <p class="lede">TRIZ is a method Genrikh Altshuller built from patents. The Institute exists to teach it, certify it, and gather the people who use it.</p>
+        <p class="kicker">The Altshuller Institute for TRIZ Studies</p>
+        <h1><em>Stop</em> learning to innovate through trial and error.</h1>
+        <p class="lede">Learn TRIZ, the Theory of Inventive Problem Solving developed by Genrikh Altshuller, and solve problems more efficiently and intuitively. The Institute teaches it, certifies it, and gathers the people who use it.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="pages/membership.html">Become a member</a>
-          <a class="btn btn-ghost" href="pages/events.html">TRIZCON 2026</a>
+          <a class="btn btn-accent" href="pages/membership.html">Become a member</a>
+          <a class="btn btn-light" href="pages/events.html#trizcon2026">TRIZCON 2026 · Mexico</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>1946</strong>Altshuller begins studying patents</div>
+          <div><strong>1998</strong>Institute founded with Altshuller's blessing</div>
+          <div><strong>501(c)(3)</strong>Non-profit, Worcester, Massachusetts</div>
         </div>
       </div>
     </section>
-    <section class="wrap cards">
-      <a class="card" href="pages/triz.html">
-        <h2>What is TRIZ</h2>
-        <p>The method, the 40 principles, and why it is not brainstorming.</p>
-      </a>
-      <a class="card" href="pages/events.html">
-        <h2>TRIZCON</h2>
-        <p>The next conference is in Mexico, hosted with CIMAT. Older years live in Archive.</p>
-      </a>
-      <a class="card" href="pages/learn.html">
-        <h2>Learn and certify</h2>
-        <p>Training providers, the Tulane course, and Institute certification.</p>
-      </a>
-      <a class="card" href="pages/library.html">
-        <h2>Library</h2>
-        <p>Articles, news, and the store — one shelf instead of three menus.</p>
-      </a>
+
+    <!-- Three doors, echoing the live "Become a Member / Training / Certification" strip -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid grid-3">
+          <a class="card" href="pages/membership.html">
+            <img class="card-img" src="assets/banners/join.jpg" alt="Join us — people working together at laptops">
+            <div class="card-body">
+              <h3>Become a Member</h3>
+              <p>Grow the TRIZ community by becoming a member today. Annual, student, retired and lifetime plans.</p>
+              <span class="more">Membership</span>
+            </div>
+          </a>
+          <a class="card" href="pages/learn.html">
+            <img class="card-img" src="assets/banners/training.jpg" alt="Instructor at a whiteboard leading a workshop">
+            <div class="card-body">
+              <h3>Systematic Innovation Training</h3>
+              <p>Workshops and courses from TRIZ providers, plus university programs supported by the Institute.</p>
+              <span class="more">Training schedule</span>
+            </div>
+          </a>
+          <a class="card" href="pages/learn.html#certification">
+            <img class="card-img" src="assets/banners/certification.jpg" alt="Certification check mark over a circuit background">
+            <div class="card-body">
+              <h3>TRIZ Certification</h3>
+              <p>One of the cornerstones of the Altshuller Institute: Associate, Practitioner and Specialist levels.</p>
+              <span class="more">Certification</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
-    <section class="feature wrap">
-      <div class="feature-box">
-        <p class="kicker" style="color:#c4a35a;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;margin:0 0 .4rem;">Featured</p>
-        <h2>TRIZCON 2026 — Mexico</h2>
-        <p>Call for abstracts is open. The live site still holds registration and the paper portal. This prototype only shows where that page will sit.</p>
+
+    <!-- What is TRIZ -->
+    <section class="section section-white">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">What is TRIZ?</p>
+          <h2>Inventiveness and creativity can be learned.</h2>
+          <p>TRIZ (pronounced <em>TREEZ</em>) is the Russian acronym for the Theory of Inventive Problem Solving. This proven algorithmic approach to solving technical problems began in 1946 when the engineer and scientist Genrikh Altshuller studied thousands of patents and noticed certain patterns.</p>
+          <p>From these patterns he discovered that the evolution of a technical system is not a random process, but is governed by objective laws. Those laws can be used to consciously develop a system along its path of technical evolution — and they can be taught, from school children to management consultants to PhD scientists.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="pages/triz.html">Explore TRIZ</a>
+            <a class="btn btn-ghost" href="pages/triz.html#altshuller">Who was Altshuller?</a>
+          </div>
+        </div>
+        <figure class="portrait">
+          <img src="assets/people/altshuller.jpg" alt="Genrikh Altshuller, founder of TRIZ">
+          <figcaption>Genrikh Altshuller (1926–1998), founder of TRIZ. The Institute is the only organization he authorized to use his name.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Featured event -->
+    <section class="section section-alt" id="trizcon">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Featured event</p>
+          <h2>TRIZCON 2026 is going to Mexico.</h2>
+        </div>
+        <div class="event-feature">
+          <div class="event-media">
+            <img src="assets/events/trizcon2026-banner.png" alt="TRIZCON 2026, 3–5 November 2026, hosted by CIMAT and the Altshuller Institute">
+            <p class="small muted">CIMAT — the Center for Research in Mathematics, Guanajuato — is the generous host of our annual event in 2026.</p>
+          </div>
+          <div class="event-body">
+            <h2>Call for abstracts and papers is out now</h2>
+            <p>TRIZCON is the Institute's annual international conference: an open platform for users, providers, supporters and students to come together and exchange information. The TRIZCON 2026 portal is the hub for all information and communications for this year's event.</p>
+            <ul class="facts">
+              <li><span>Dates</span><span>3–5 November 2026</span></li>
+              <li><span>Host</span><span>CIMAT, Mexico</span></li>
+              <li><span>Status</span><span>Call for abstracts open</span></li>
+            </ul>
+            <div class="actions" style="margin-top:0">
+              <a class="btn btn-primary" href="pages/events.html#trizcon2026">Conference details</a>
+              <a class="btn btn-ghost ext" href="https://www.aitriz.org/" target="_blank" rel="noopener">TRIZCON 2026 portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore tiles (the live home's three image "cubes") -->
+    <section class="section">
+      <div class="wrap">
+        <div class="tiles">
+          <a class="tile" href="pages/triz.html" style="background-image:url('assets/banners/about-us.jpg')">
+            <div class="tile-body">
+              <p class="kicker">TRIZ</p>
+              <h3>What is TRIZ?</h3>
+              <p>Learn about TRIZ and its community here.</p>
+            </div>
+          </a>
+          <a class="tile" href="pages/library.html" style="background-image:url('assets/banners/news.jpg')">
+            <div class="tile-body">
+              <p class="kicker">Library</p>
+              <h3>TRIZ News &amp; Articles</h3>
+              <p>Read about the latest TRIZ news from around the world.</p>
+            </div>
+          </a>
+          <a class="tile" href="pages/events.html" style="background-image:url('assets/banners/conference.jpg')">
+            <div class="tile-body">
+              <p class="kicker">Events</p>
+              <h3>TRIZ Conferences</h3>
+              <p>Talk with other professionals at TRIZ conferences.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Director -->
+    <section class="section section-white">
+      <div class="wrap letter">
+        <img src="assets/people/richard-langevin.jpg" alt="Richard Langevin, Executive Director of the Altshuller Institute">
+        <div>
+          <p class="kicker">Notes from the Executive Director</p>
+          <h2>Welcome to the Altshuller Institute for TRIZ Studies</h2>
+          <p class="pull">"After nearly 30 years of existence, the Institute came to recognize that it had fallen into its own form of 'Paradigm Paralysis.' … We realized it was time not simply to preserve TRIZ, but to reinvent how we communicate, teach, and apply it in the modern world."</p>
+          <p>Today, we are re-energizing the Institute with a renewed mission — not only to promote TRIZ, but to help people successfully apply TRIZ to real-world challenges, business growth, education, innovation, and personal development. Our goal is to build a strong global community of TRIZ practitioners, educators, researchers, students, and business leaders who believe in the value of structured creativity and advanced problem-solving.</p>
+          <p>We hope you will join us as we begin this exciting new chapter. Let's make Altshuller proud on his 100th anniversary.</p>
+          <p class="signature">Richard Langevin<small>Executive Director</small></p>
+          <a href="pages/about.html#director">Read the full letter →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who uses TRIZ -->
+    <section class="section section-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Powerful solutions grow on TRIZ</p>
+          <h2>Employers are looking for these skills.</h2>
+          <p>Fortune 500 companies recognize the power of TRIZ in driving structured innovation, improving problem-solving, and enhancing competitive advantage.</p>
+        </div>
+        <ul class="chips">
+          <li>Samsung</li><li>Intel</li><li>General Electric</li><li>Procter &amp; Gamble</li><li>Ford</li><li>Boeing</li><li>Siemens</li><li>LG Electronics</li><li>Panasonic</li><li>Honeywell</li><li>Hewlett-Packard</li><li>NASA</li><li>Toyota</li><li>Xerox</li><li>Rolls Royce</li><li>Johnson &amp; Johnson</li><li>Motorola</li><li>Shell</li><li>Lockheed Martin</li><li>and many more</li>
+        </ul>
+        <hr style="border-color:rgba(255,255,255,0.12);margin:2.5rem 0">
+        <div class="grid grid-2">
+          <div>
+            <h3>TRIZ works</h3>
+            <p>Some fundamental factors that point to TRIZ as an effective and transformational methodology:</p>
+          </div>
+          <ul class="checks">
+            <li>It is grounded in a reliable body of knowledge: the growing patent base.</li>
+            <li>The scenarios it generates bypass the psychological inertia of team members.</li>
+            <li>It can be used with other quality processes, removing roadblocks and speeding up decision-making.</li>
+            <li>It is rapid in generating solution concepts, relative to other methods.</li>
+            <li>It can be taught, and applied, at any level of education.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tulane / Learn teaser -->
+    <section class="section">
+      <div class="wrap split reverse">
+        <div>
+          <p class="kicker">TRIZ in the university</p>
+          <h2>Four years of TRIZ at Tulane Bioengineering</h2>
+          <p>The Altshuller Institute facilitates the training and support of the Bioengineering department at Tulane University, New Orleans. For the fourth year in a row, Tulane offers a TRIZ course as part of the graduate engineering curriculum, and students may sit for the Institute's Associate certification exam.</p>
+          <blockquote>"Students examine their past projects with the training they received and implement TRIZ conflict resolution, and compare their previous designs to the multitude of innovative solutions they could generate with the TRIZ framework."<cite>Prof. Khaled Adjerid, Bioengineering Department Head, Tulane University</cite></blockquote>
+          <div class="actions">
+            <a class="btn btn-primary" href="pages/learn.html#universities">University programs</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/learn/tulane-teaching.jpg" alt="Tulane students working through the TRIZ contradiction matrix with a copy of 40 Principles">
+          <figcaption>Tulane students working the contradiction matrix during the TRIZ course.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Membership CTA -->
+    <section class="cta-band">
+      <div class="wrap">
+        <div>
+          <p class="kicker">Strengthen the global TRIZ community</p>
+          <h2>Become a member of the Altshuller Institute.</h2>
+          <p>Membership is more than access — it's influence, connection, and a chance to shape the future of TRIZ on a global scale. When you join, you become part of a network that:</p>
+          <ul class="checks">
+            <li>Builds partnerships with TRIZ organizations, professional societies, and research institutions worldwide.</li>
+            <li>Facilitates the exchange of ideas, case studies, and best practices.</li>
+            <li>Supports joint research projects and cooperative innovation efforts.</li>
+            <li>Promotes the standardization of TRIZ practices for a unified approach to inventive problem solving.</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h3>Join, sponsor, or give</h3>
+          <p class="small">Individual plans from free trial membership to lifetime. Corporate group plans and Legacy Support sponsorship help sustain the Institute's year-round programs.</p>
+          <div class="actions" style="margin-top:0.5rem">
+            <a class="btn btn-primary" href="pages/membership.html#join">See membership plans</a>
+            <a class="btn btn-ghost" href="pages/membership.html#support">Sponsorship &amp; donations</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <p>The Altshuller Institute for TRIZ Studies · 501(c)(3)</p>
-      <p><a href="pages/about.html">Contact</a> · ai@triz.org · Governance stays under About</p>
+    <div class="wrap footer-main">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/brand/ai-logo.png" alt="">
+          <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
+        </div>
+        <p>A 501(c)(3) non-profit established in 1998 with the blessing of Genrikh Altshuller to promote TRIZ outside of Russia. We promote the use of TRIZ through conferences, certification, webinars, books and videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="pages/triz.html">What is TRIZ</a></li>
+          <li><a href="pages/events.html">Events &amp; TRIZCON</a></li>
+          <li><a href="pages/learn.html">Training &amp; certification</a></li>
+          <li><a href="pages/library.html">Library &amp; news</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institute</h4>
+        <ul>
+          <li><a href="pages/membership.html">Membership</a></li>
+          <li><a href="pages/membership.html#support">Sponsorship &amp; donations</a></li>
+          <li><a href="pages/about.html">About us</a></li>
+          <li><a href="pages/about.html#governance">Governance &amp; bylaws</a></li>
+          <li><a href="pages/about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>The Altshuller Institute for TRIZ Studies</li>
+          <li>100 Barber Avenue<br>Worcester, MA 01606, USA</li>
+          <li><a href="tel:+15087996601">508-799-6601</a></li>
+          <li><a href="mailto:ai@triz.org">ai@triz.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-sponsors">
+      <div class="wrap">
+        <p class="kicker">Our sponsors</p>
+        <div class="sponsors">
+          <img src="assets/sponsors/post-university.jpg" alt="Post University, Malcolm Baldrige School of Business">
+          <img src="assets/sponsors/innovation-triz.jpg" alt="Innovation-TRIZ">
+          <img src="assets/sponsors/tic.png" alt="Technical Innovation Center, Inc.">
+          <img src="assets/sponsors/kent-state.png" alt="Kent State University">
+          <img src="assets/sponsors/wfpa.jpg" alt="WorkForce Planning Associates, Inc.">
+          <img src="assets/sponsors/pratt-whitney.png" alt="Pratt &amp; Whitney Rocketdyne">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap">
+        <span>© The Altshuller Institute for TRIZ Studies, 2007–2026. All rights reserved.</span>
+        <span>Board prototype — the live site remains at <a href="https://www.aitriz.org" target="_blank" rel="noopener">aitriz.org</a></span>
+      </div>
     </div>
   </footer>
 </body>
