@@ -3,21 +3,262 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TRIZ — Altshuller Institute</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:wght@600&display=swap">
+  <title>What is TRIZ? — The Altshuller Institute for TRIZ Studies</title>
+  <meta name="description" content="TRIZ, the Theory of Inventive Problem Solving: what it is, who Genrikh Altshuller was, the 40 inventive principles, and the TRIZ Body of Knowledge.">
+  <link rel="icon" href="../assets/brand/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
-  <div class="banner">Board prototype — not the live site</div>
-  <header class="site-header"><div class="wrap">
-    <a class="brand" href="../index.html"><span class="brand-mark">AITRIZ</span><span class="brand-name">The Altshuller Institute</span></a>
-    <nav class="nav"><a href="triz.html" aria-current="page">TRIZ</a><a href="events.html">Events</a><a href="learn.html">Learn</a><a href="membership.html">Membership</a><a href="library.html">Library</a><a href="about.html">About</a></nav>
-  </div></header>
-  <main class="page wrap">
-    <h1>What is TRIZ</h1>
-    <p>TRIZ is a systematic method for inventive problem-solving, drawn from the study of patents. Genrikh Altshuller showed that strong solutions follow patterns. Those patterns can be taught.</p>
-    <p>This page will hold: a short definition, who Altshuller was, the 40 principles as a reference — not a dump of every historical essay on the first screen.</p>
-    <p class="note">Live source pages to merge here: /triz, /altshuller, and the principle/reference articles. Archive the rest.</p>
+  <div class="utility">
+    <div class="wrap">
+      <span class="utility-contact">100 Barber Avenue, Worcester, MA 01606 &nbsp;·&nbsp; <a href="tel:+15087996601">508-799-6601</a></span>
+      <span class="proto">Board prototype</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">
+        <img src="../assets/brand/ai-logo.png" alt="" width="46" height="46">
+        <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation"><span></span></label>
+      <nav class="nav" aria-label="Primary">
+        <a href="triz.html" aria-current="page">TRIZ</a>
+        <a href="events.html">Events</a>
+        <a href="learn.html">Learn</a>
+        <a href="membership.html">Membership</a>
+        <a href="library.html">Library</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="membership.html#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="background-image:url('../assets/banners/about-us.jpg')">
+    <div class="wrap">
+      <p class="crumbs"><a href="../index.html">Home</a> / TRIZ</p>
+      <p class="kicker">Theory of Inventive Problem Solving</p>
+      <h1>What is TRIZ?</h1>
+      <p class="lede">A premier disruptive technology for innovation, derived from empirical data — the patent record of how inventive people solved inventive problems.</p>
+    </div>
+  </section>
+  <nav class="subnav" aria-label="On this page">
+    <div class="wrap">
+      <a href="#definition">Definition</a>
+      <a href="#altshuller">Genrikh Altshuller</a>
+      <a href="#why">Why TRIZ works</a>
+      <a href="#principles">40 principles</a>
+      <a href="#body-of-knowledge">Body of Knowledge</a>
+      <a href="#masters">TRIZ Masters</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" id="definition">
+      <div class="wrap two-col">
+        <div class="prose">
+          <h2>A systematic process for innovation</h2>
+          <p>TRIZ is a systematic process that develops critical thinking skills and promotes creativity and innovation. Elements of TRIZ can be effectively used by a wide range of people — from children to adults — and throughout many industries and sciences.</p>
+          <p>TRIZ (pronounced <em>TREEZ</em>) is the Russian acronym for the <strong>Theory of Inventive Problem Solving</strong>. This proven algorithmic approach to solving technical problems began in 1946 when the Russian engineer and scientist Genrikh Altshuller studied thousands of patents and noticed certain patterns. From these patterns he discovered that the evolution of a technical system is not a random process, but is governed by certain objective laws. These laws can be used to consciously develop a system along its path of technical evolution — by determining and implementing innovations.</p>
+          <p>One result of Altshuller's theory — that inventiveness and creativity can be learned — has fundamentally altered the psychological model of creativity.</p>
+          <p>TRIZ developed in the Soviet Union, moving underground after Altshuller was imprisoned for his "heretical" work, until the fall of the USSR when TRIZ re-emerged and migrated to the West. Today many Fortune 500 companies successfully use TRIZ methodology, and its use has expanded into bio-medical research, medicine, computer programming and business management.</p>
+          <p>TRIZ does not compete with or replace other quality methods. It synergistically complements methodologies like QFD, Six Sigma, Kaizen and Lean, and can be used to address their weaknesses.</p>
+        </div>
+        <div>
+          <div class="aside-box">
+            <h3>Premise of TRIZ</h3>
+            <p class="small">"The evolution of successful technological systems is not random, but is governed by certain laws or prevailing trends."</p>
+            <p class="small muted" style="margin:0">— TRIZ Body of Knowledge, jointly developed by MATRIZ and the Altshuller Institute</p>
+          </div>
+          <div class="aside-box" style="margin-top:1.2rem">
+            <h3>Core concepts</h3>
+            <ul>
+              <li>Ideal Final Result (IFR) and ideality</li>
+              <li>Contradictions: administrative, engineering, physical</li>
+              <li>Levels of inventions</li>
+              <li>Trends (laws) of technological system evolution</li>
+              <li>40 inventive principles and the Contradiction Matrix</li>
+              <li>Substance-Field analysis and the 76 standard solutions</li>
+              <li>ARIZ — the algorithm for inventive problem solving</li>
+              <li>Scientific effects: physical, chemical, geometrical</li>
+            </ul>
+          </div>
+          <div class="aside-box" style="margin-top:1.2rem">
+            <h3>Read more</h3>
+            <p class="small" style="margin:0">Lev Shulyak's "Introduction to TRIZ", excerpted from <em>40 Principles</em>: <a class="ext" href="https://www.aitriz.org/articles/40p_triz.pdf" target="_blank" rel="noopener">PDF on aitriz.org</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="altshuller">
+      <div class="wrap split">
+        <div class="prose">
+          <p class="kicker">The founder</p>
+          <h2>Genrikh Altshuller, 1926–1998</h2>
+          <p>Genrikh Altshuller grew up in the remarkable city of Baku, Azerbaijan, in the former USSR. Baku was a cultural ecotone where European, Islamic and Asian cultures met. It is probably significant that TRIZ, which encompasses both Eastern and Western thought modalities, originated within such a diverse east-west climate. At age fourteen, Altshuller was awarded his first Soviet patent for an underwater breathing device.</p>
+          <p>Over one dozen patented inventions — and one engineering degree — later, Altshuller found himself working as a consultant in the Caspian Sea Naval Patent Office. He searched for a simple, scientific way of classifying inventions by their degree of inventiveness. After correlating thousands of patents he discovered that there were only five distinct levels of inventiveness, and several of these did not represent actual "inventions" but merely alterations or extensions of existing ones.</p>
+          <p>His analysis revealed that all technical systems evolve along natural and predictable lines of evolution, and that all industries utilized the same underlying innovative principles. Therefore these principles could be generalized for universal application — and innovation could be learned. It could be taught.</p>
+          <p>Even when Stalin rewarded Altshuller with imprisonment in a Siberian labor camp, he continued his work. He formed a "University for One" where persecuted intellectuals, authors, and college professors taught him their subjects of expertise. After Stalin's death, Altshuller was released. Unable to openly teach TRIZ, he began writing science fiction under the pen name Altov. He continued developing and teaching TRIZ with dozens of co-investigators throughout his life, eventually applying it to non-technical fields.</p>
+          <p class="small muted">The Altshuller Institute is the only organization officially authorized by Genrikh Altshuller to use his name. The live site's Altshuller section also holds an interview, his last communiqué, notes on his teaching, and tributes — those articles move to the <a href="library.html">Library</a>.</p>
+        </div>
+        <figure class="portrait">
+          <img src="../assets/people/altshuller.jpg" alt="Portrait of Genrikh Altshuller">
+          <figcaption>Genrikh Saulovich Altshuller. Portrait from the Institute's archive.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Why TRIZ works</p>
+          <h2>Fundamental factors that point to TRIZ as an effective and transformational methodology</h2>
+        </div>
+        <div class="grid grid-2">
+          <ul class="checks">
+            <li>It is very general.</li>
+            <li>It is grounded in a reliable body of knowledge, the growing patent base.</li>
+            <li>The scenarios it generates bypass the psychological inertia of team members.</li>
+            <li>It can be used with other quality processes, removing roadblocks and speeding up decision-making.</li>
+          </ul>
+          <ul class="checks">
+            <li>It reduces the resources required to generate a solution set.</li>
+            <li>It is rapid in generating solution concepts, relative to other methods.</li>
+            <li>It can be taught, and applied, at any level of education, from school children to management consultants to PhD scientists.</li>
+          </ul>
+        </div>
+        <hr>
+        <div class="grid grid-3">
+          <blockquote>"I know of no other approach to inventing that offers such a rich arsenal of both practical and imaginative thinking tools."<cite>George Prince, Co-founder of Synectics, Inc.</cite></blockquote>
+          <blockquote>"The ultimate worldwide impact of TRIZ methodology upon innovative technology-driven businesses could easily match the impact of CAD systems on new product design."<cite>James P. Dunn, Co-Executive Director, CTC, NASA Regional Technology Transfer Center</cite></blockquote>
+          <blockquote>"This methodology, TRIZ, can help technical innovation in a systematic way and help corporations and individuals reach their peak potential."<cite>Daniel Burrus, Burrus Research Associates</cite></blockquote>
+        </div>
+        <h3 style="margin-top:2.5rem">Companies that have used TRIZ</h3>
+        <ul class="chips">
+          <li>Ford</li><li>General Motors</li><li>Chrysler</li><li>Eastman Kodak</li><li>Exxon</li><li>Rockwell International</li><li>Procter &amp; Gamble</li><li>Xerox</li><li>Hewlett Packard</li><li>Motorola</li><li>BAE Systems</li><li>Brunswick-Life Fitness</li><li>Boeing</li><li>Philips Semiconductor</li><li>LG Electronics</li><li>Delphi</li><li>Boston Scientific</li><li>Intel</li><li>S.C. Johnson</li><li>Samsung</li><li>Siemens</li><li>Honeywell</li><li>NASA</li><li>Toyota</li><li>…and many more</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="principles">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Reference</p>
+          <h2>The 40 inventive principles</h2>
+          <p>Altshuller's forty principles for resolving engineering contradictions are the best-known TRIZ tool. Paired with the Contradiction Matrix, they point an inventor toward the principles that have most often resolved a given conflict between two system parameters.</p>
+        </div>
+        <ol class="principles">
+          <li>Segmentation</li><li>Taking out (extraction)</li><li>Local quality</li><li>Asymmetry</li><li>Merging (consolidation)</li><li>Universality</li><li>Nested doll</li><li>Anti-weight (counterweight)</li><li>Preliminary anti-action</li><li>Preliminary action</li><li>Beforehand cushioning</li><li>Equipotentiality</li><li>The other way round</li><li>Spheroidality (curvature)</li><li>Dynamics</li><li>Partial or excessive actions</li><li>Another dimension</li><li>Mechanical vibration</li><li>Periodic action</li><li>Continuity of useful action</li><li>Skipping (rushing through)</li><li>Blessing in disguise</li><li>Feedback</li><li>Intermediary</li><li>Self-service</li><li>Copying</li><li>Cheap short-living objects</li><li>Mechanics substitution</li><li>Pneumatics and hydraulics</li><li>Flexible shells and thin films</li><li>Porous materials</li><li>Color changes</li><li>Homogeneity</li><li>Discarding and recovering</li><li>Parameter changes</li><li>Phase transitions</li><li>Thermal expansion</li><li>Strong oxidants</li><li>Inert atmosphere</li><li>Composite materials</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-white" id="body-of-knowledge">
+      <div class="wrap two-col">
+        <div class="prose">
+          <p class="kicker">Standards</p>
+          <h2>The TRIZ Body of Knowledge</h2>
+          <p>In order to elevate TRIZ to a larger stage, the development of a viable certification program is required. The Altshuller Institute spearheaded an initiative to define a universal set of guidelines so that TRIZ terms have the same meaning regardless of where the TRIZ user was trained.</p>
+          <p>The International TRIZ Association (MATRIZ), the Altshuller Institute for TRIZ Studies and the European TRIZ Association (ETRIA) mutually agreed to define the TRIZ Body of Knowledge. It was developed jointly by Simon Litvin, Vladimir Petrov and Mikhail Rubin of MATRIZ and Victor Fey, the Institute's Education Director.</p>
+          <p>To be included, a TRIZ concept, component or tool must be used by the majority of TRIZ schools in the world, in the majority of non-commercial publications by TRIZ Masters, and in the majority of TRIZ courses presently offered.</p>
+          <a class="btn btn-primary ext" href="https://www.aitriz.org/articles/TRIZ_Body_of_Knowledge.pdf" target="_blank" rel="noopener">Download the Body of Knowledge (PDF)</a>
+        </div>
+        <div class="aside-box">
+          <h3>Structure of the Body of Knowledge</h3>
+          <ol>
+            <li>Foundational concepts — dialectics, technological system, functions, ideality, sufields, IFR, contradictions, system operator</li>
+            <li>Trends (laws) and sub-trends of technological system evolution</li>
+            <li>ARIZ — Algorithm for Inventive Problem Solving</li>
+            <li>Substance-Field analysis and the system of 76 standards</li>
+            <li>Techniques for resolving contradictions — 40 principles, Contradiction Matrix, separation principles</li>
+            <li>Scientific effects — physical, chemical, geometrical</li>
+            <li>System analysis methods — function analysis, trimming, cause-effect analysis, failure anticipation</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="masters">
+      <div class="wrap two-col">
+        <div>
+          <p class="kicker">Recognition</p>
+          <h2>TRIZ Masters</h2>
+          <p>Genrikh Altshuller personally appointed the first TRIZ Masters before his death on September 24, 1998 — more than sixty practitioners from Baku, Saint Petersburg, Moscow, Kishinev, Novosibirsk and beyond, many of whom later brought TRIZ to the United States, Israel and Europe. Since October 14, 2006, the MATRIZ Dissertation Board has appointed new TRIZ Masters.</p>
+          <p><a class="ext" href="https://www.aitriz.org/triz/triz-masters" target="_blank" rel="noopener">Full list of TRIZ Masters on aitriz.org</a></p>
+        </div>
+        <div>
+          <p class="kicker">Certification</p>
+          <h2>Become a certified practitioner</h2>
+          <p>The Institute's certification program verifies that individuals have attained a level of accomplishment and expertise in TRIZ. Three primary levels — Associate, Practitioner and Specialist — lead toward Master.</p>
+          <a class="btn btn-accent" href="learn.html#certification">Certification levels</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="wrap"><p>The Altshuller Institute for TRIZ Studies</p></div></footer>
-</body></html>
+
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div>
+        <div class="footer-brand">
+          <img src="../assets/brand/ai-logo.png" alt="">
+          <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
+        </div>
+        <p>A 501(c)(3) non-profit established in 1998 with the blessing of Genrikh Altshuller to promote TRIZ outside of Russia. We promote the use of TRIZ through conferences, certification, webinars, books and videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="triz.html">What is TRIZ</a></li>
+          <li><a href="events.html">Events &amp; TRIZCON</a></li>
+          <li><a href="learn.html">Training &amp; certification</a></li>
+          <li><a href="library.html">Library &amp; news</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institute</h4>
+        <ul>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="membership.html#support">Sponsorship &amp; donations</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#governance">Governance &amp; bylaws</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>The Altshuller Institute for TRIZ Studies</li>
+          <li>100 Barber Avenue<br>Worcester, MA 01606, USA</li>
+          <li><a href="tel:+15087996601">508-799-6601</a></li>
+          <li><a href="mailto:ai@triz.org">ai@triz.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-sponsors">
+      <div class="wrap">
+        <p class="kicker">Our sponsors</p>
+        <div class="sponsors">
+          <img src="../assets/sponsors/post-university.jpg" alt="Post University, Malcolm Baldrige School of Business">
+          <img src="../assets/sponsors/innovation-triz.jpg" alt="Innovation-TRIZ">
+          <img src="../assets/sponsors/tic.png" alt="Technical Innovation Center, Inc.">
+          <img src="../assets/sponsors/kent-state.png" alt="Kent State University">
+          <img src="../assets/sponsors/wfpa.jpg" alt="WorkForce Planning Associates, Inc.">
+          <img src="../assets/sponsors/pratt-whitney.png" alt="Pratt &amp; Whitney Rocketdyne">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap">
+        <span>© The Altshuller Institute for TRIZ Studies, 2007–2026. All rights reserved.</span>
+        <span>Board prototype — the live site remains at <a href="https://www.aitriz.org" target="_blank" rel="noopener">aitriz.org</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
