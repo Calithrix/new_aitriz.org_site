@@ -306,7 +306,8 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);
 }
 .event-feature .event-media { background: var(--white); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2.5rem; border-right: 1px solid var(--line); gap: 1.2rem; text-align: center; }
-.event-feature .event-media img { max-width: 420px; }
+.event-feature .event-media img { max-width: min(420px, 100%); }
+.grid > *, .split > *, .two-col > *, .event-feature > *, .letter > *, .cta-band .wrap > * { min-width: 0; }
 .event-feature .event-body { padding: 2.5rem 2.5rem 2.2rem; }
 .event-body h2 { margin-top: 0; }
 .facts { list-style: none; padding: 0; margin: 1.2rem 0 1.5rem; display: grid; gap: 0.6rem; }
