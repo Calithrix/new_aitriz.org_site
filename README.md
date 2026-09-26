@@ -20,6 +20,7 @@ Then open http://127.0.0.1:8000
 - Six-item nav: TRIZ, Events, Learn, Membership, Library, About
 - Homepage: one hero, four doors, one featured piece
 - Public copy only. No member database.
+- IA map (live URLs → six sections, Keep / Merge / Archive / Redirect): [docs/ia-map.md](docs/ia-map.md)
 
 ## What this is not
 
