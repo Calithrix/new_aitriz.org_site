@@ -241,6 +241,7 @@ tr:last-child td { border-bottom: 0; }
 .section-dark h2, .section-dark h3 { color: var(--white); }
 .section-dark .kicker { color: var(--khaki); }
 .section-dark a { color: var(--khaki); }
+.section-dark .btn-accent, .section-blue .btn-accent { color: var(--charcoal); }
 .section-blue { background: linear-gradient(135deg, var(--blue-deep), var(--blue)); color: var(--white); }
 .section-blue h2, .section-blue h3 { color: var(--white); }
 .section-blue .kicker { color: var(--khaki); }
