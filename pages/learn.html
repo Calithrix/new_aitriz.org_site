@@ -12,24 +12,20 @@
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
   <div class="utility">
     <div class="wrap">
       <span class="utility-contact">100 Barber Avenue, Worcester, MA 01606 &nbsp;·&nbsp; <a href="tel:+15087996601">508-799-6601</a></span>
-      <span class="utility-end">
-        <a class="utility-login ext" href="https://www.aitriz.org/login" target="_blank" rel="noopener noreferrer">Member login</a>
-        <span class="proto">Board prototype</span>
-      </span>
+      <span class="proto">Board prototype</span>
     </div>
   </div>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="../index.html">
-        <img src="../assets/brand/ai-logo.png" alt="Altshuller Institute logo" width="58" height="58">
+        <img src="../assets/brand/ai-logo.png" alt="" width="46" height="46">
         <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation"><span></span></label>
       <nav class="nav" aria-label="Primary">
         <a href="triz.html">TRIZ</a>
@@ -43,7 +39,6 @@
     </div>
   </header>
 
-  <main id="content">
   <section class="page-hero" style="background-image:url('../assets/banners/training.jpg')">
     <div class="wrap">
       <p class="crumbs"><a href="../index.html">Home</a> / Learn</p>
@@ -62,6 +57,7 @@
     </div>
   </nav>
 
+  <main>
     <section class="section" id="training">
       <div class="wrap">
         <div class="section-head">
@@ -111,7 +107,7 @@
             <span class="tag">Certification prep</span>
           </div>
         </div>
-        <p class="small muted" style="margin-top:1.2rem">Listings reflect the live training calendar as of September 2026. Dates and fees are set by each provider; confirm on the provider's site before registering. <a class="ext" href="https://www.aitriz.org/triz-training" target="_blank" rel="noopener noreferrer">Full calendar on aitriz.org</a></p>
+        <p class="small muted" style="margin-top:1.2rem">Listings reflect the live training calendar as of September 2026. Dates and fees are set by each provider; confirm on the provider's site before registering. <a class="ext" href="https://www.aitriz.org/triz-training" target="_blank" rel="noopener">Full calendar on aitriz.org</a></p>
       </div>
     </section>
 
@@ -184,9 +180,8 @@
         </div>
         <div class="table-wrap">
           <table>
-            <caption class="sr-only">Summary of qualification requirements for TRIZ certification</caption>
             <thead>
-              <tr><th scope="col">Qualification</th><th scope="col">Requirement</th><th scope="col">Evaluation procedure</th></tr>
+              <tr><th>Qualification</th><th>Requirement</th><th>Evaluation procedure</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -228,7 +223,7 @@
         </div>
         <div class="aside-box" style="margin-top:2rem">
           <h3>Recommended references</h3>
-          <ul class="small cols-2">
+          <ul class="small" style="columns:2;column-gap:2rem">
             <li>Altshuller, G.S. (1988). <em>Creativity as an Exact Science</em>. Gordon and Breach.</li>
             <li>Altshuller, G.S. (1999). <em>The Innovation Algorithm</em>. Technical Innovation Center.</li>
             <li>Altshuller, G.S. (1995). <em>And Suddenly the Inventor Appeared</em>. Technical Innovation Center.</li>
@@ -242,9 +237,9 @@
           </ul>
         </div>
         <div class="actions">
-          <a class="btn btn-primary ext" href="https://www.aitriz.org/triz-certification/test-application" target="_blank" rel="noopener noreferrer">Test application</a>
-          <a class="btn btn-ghost ext" href="https://www.aitriz.org/documents/Certification/ASSOCIATE_TEST_SAMPLE.pdf" target="_blank" rel="noopener noreferrer">Associate sample questions (PDF)</a>
-          <a class="btn btn-ghost ext" href="https://www.aitriz.org/triz-certification/certified-practitioners" target="_blank" rel="noopener noreferrer">Certified practitioners list</a>
+          <a class="btn btn-primary ext" href="https://www.aitriz.org/triz-certification/test-application" target="_blank" rel="noopener">Test application</a>
+          <a class="btn btn-ghost ext" href="https://www.aitriz.org/documents/Certification/ASSOCIATE_TEST_SAMPLE.pdf" target="_blank" rel="noopener">Associate sample questions (PDF)</a>
+          <a class="btn btn-ghost ext" href="https://www.aitriz.org/triz-certification/certified-practitioners" target="_blank" rel="noopener">Certified practitioners list</a>
           <a class="btn btn-ghost" href="triz.html#body-of-knowledge">TRIZ Body of Knowledge</a>
         </div>
       </div>
@@ -292,13 +287,13 @@
     <div class="wrap footer-main">
       <div>
         <div class="footer-brand">
-          <img src="../assets/brand/ai-logo.png" alt="Altshuller Institute logo" width="64" height="64">
+          <img src="../assets/brand/ai-logo.png" alt="">
           <span class="brand-text">Altshuller Institute<small>for TRIZ Studies</small></span>
         </div>
         <p>A 501(c)(3) non-profit established in 1998 with the blessing of Genrikh Altshuller to promote TRIZ outside of Russia. We promote the use of TRIZ through conferences, certification, webinars, books and videos.</p>
       </div>
       <div>
-        <h2>Explore</h2>
+        <h4>Explore</h4>
         <ul>
           <li><a href="triz.html">What is TRIZ</a></li>
           <li><a href="events.html">Events &amp; TRIZCON</a></li>
@@ -307,7 +302,7 @@
         </ul>
       </div>
       <div>
-        <h2>Institute</h2>
+        <h4>Institute</h4>
         <ul>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="membership.html#support">Sponsorship &amp; donations</a></li>
@@ -317,7 +312,7 @@
         </ul>
       </div>
       <div>
-        <h2>Contact</h2>
+        <h4>Contact</h4>
         <ul>
           <li>The Altshuller Institute for TRIZ Studies</li>
           <li>100 Barber Avenue<br>Worcester, MA 01606, USA</li>
@@ -342,7 +337,7 @@
     <div class="footer-bottom">
       <div class="wrap">
         <span>© The Altshuller Institute for TRIZ Studies, 2007–2026. All rights reserved.</span>
-        <span><a href="https://www.aitriz.org" target="_blank" rel="noopener noreferrer">aitriz.org</a></span>
+        <span>Board prototype — the live site remains at <a href="https://www.aitriz.org" target="_blank" rel="noopener">aitriz.org</a></span>
       </div>
     </div>
   </footer>
