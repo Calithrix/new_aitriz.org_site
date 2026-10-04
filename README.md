@@ -26,7 +26,8 @@ Then open http://127.0.0.1:8000
 
 ```
 index.html          home
-pages/*.html        triz, events, learn, membership, library, about
+pages/*.html        triz, events, learn, membership, library, about, store
 css/site.css        single stylesheet, design tokens at the top
+js/store.js         PayPal buy buttons for the General Store prototype
 assets/             logo, banners, portraits, event and sponsor images
 ```
