@@ -20,13 +20,14 @@ Then open http://127.0.0.1:8000
 
 - Not a Joomla clone
 - Not a cutover plan
-- Not a store or login — checkout, registration and the paper portal link out to the live site
+- Not a login — registration and the paper portal link out to the live site. The General Store (`pages/store.html`) is a PayPal-button prototype; checkout is not live.
 
 ## Layout
 
 ```
 index.html          home
-pages/*.html        triz, events, learn, membership, library, about
+pages/*.html        triz, events, learn, membership, library, about, store
 css/site.css        single stylesheet, design tokens at the top
+js/store.js         PayPal buy buttons for the General Store prototype
 assets/             logo, banners, portraits, event and sponsor images
 ```
