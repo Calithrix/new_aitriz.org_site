@@ -1,16 +1,18 @@
 /*
- * General Store — PayPal button prototype
+ * General Store — PayPal buy buttons
  *
  * ONE-LINE SWAP: replace PAYPAL_CLIENT_ID with the Institute's
  * PayPal business (Live) client ID. Do not add a second client ID.
  *
  * While the value below is unchanged, this file does not load the
  * PayPal SDK and does not create orders. Buttons stay on the page
- * and report that checkout is not live.
+ * and report that checkout is not live when clicked.
  *
- * To take a card live, also set that card's data-amount to a USD
- * string with two decimals (for example "49.00") and update the
- * visible price. Placeholder prices ("$XX") are never charged.
+ * Every card in pages/store.html carries a data-amount in USD with
+ * two decimals (for example "49.00") that mirrors its visible price.
+ * Keep the two in sync when the Institute changes a price. Cards
+ * without a valid data-amount are never charged. Sold-out items have
+ * no .store-buy block at all.
  */
 var PAYPAL_CLIENT_ID = 'REPLACE_WITH_INSTITUTE_PAYPAL_ID';
 
@@ -45,7 +47,7 @@ var PAYPAL_CLIENT_ID = 'REPLACE_WITH_INSTITUTE_PAYPAL_ID';
 
   function mountSdkButton(buy, paypal) {
     var amount = buy.getAttribute('data-amount') || '';
-    var title = buy.getAttribute('data-title') || 'Sample Item';
+    var title = buy.getAttribute('data-title') || 'General Store item';
     if (!isChargeableAmount(amount)) {
       bindPrototype(buy);
       return;
