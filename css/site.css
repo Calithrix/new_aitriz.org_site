@@ -548,6 +548,72 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .actions { flex-direction: column; }
   .utility .wrap { justify-content: center; }
 }
+/* General Store (PayPal prototype) ----------------------------- */
+.store-banner {
+  background: var(--khaki-light);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.1rem;
+  margin: 0 0 1.8rem;
+  color: var(--charcoal);
+  font-family: var(--font-head);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.store-card .store-kind {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 0 0 0.45rem;
+}
+.store-card .store-price {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: var(--blue-deep);
+  margin: 0 0 0.9rem;
+}
+.store-card .card-body p { flex: 0 0 auto; }
+.store-buy { margin-top: auto; }
+/* PayPal gold with dark label. Color is set on the control itself so
+   it stays readable without hover (site gold-on-khaki buttons did not). */
+.paypal-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background: #ffc439;
+  color: #111111;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.paypal-buy:hover,
+.paypal-buy:focus {
+  background: #f2ba36;
+  color: #111111;
+}
+.paypal-slot { min-height: 45px; }
+.store-card .store-checkout-status {
+  margin: 0.65rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
 @media (max-width: 360px) {
   .brand { gap: 0.6rem; }
   .brand img { width: 50px; height: 50px; }
