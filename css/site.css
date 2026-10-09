@@ -357,6 +357,8 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .plan h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
 .plan .price { font-family: var(--font-head); font-weight: 800; font-size: 1.9rem; color: var(--blue-deep); margin: 0.4rem 0 0.1rem; }
 .plan .price small { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.plan .price.is-pending { font-size: 1.05rem; font-weight: 700; line-height: 1.35; color: var(--muted); }
+.stat strong.is-pending { font-size: 1.35rem; line-height: 1.25; }
 .plan .term { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
 .plan ul { padding-left: 1.1rem; font-size: 0.93rem; margin: 0 0 1.2rem; flex: 1; }
 .plan .btn { align-self: flex-start; }
@@ -687,10 +689,15 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 }
 .paypal-slot { min-height: 45px; }
 .store-card .store-checkout-status {
-  margin: 0.65rem 0 0;
+  margin: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--charcoal);
+  color: var(--muted);
+  text-align: center;
 }
 
 @media (max-width: 360px) {
