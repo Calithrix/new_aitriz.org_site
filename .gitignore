@@ -1,4 +1,5 @@
 .DS_Store
+dist/
 Thumbs.db
 *.log
 .idea/
