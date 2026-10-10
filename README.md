@@ -1,6 +1,6 @@
-# Altshuller Institute site
+# AITRIZ board prototype
 
-Static site for [aitriz.org](https://www.aitriz.org). It is the planned replacement for the current Joomla site. It is not the live site yet.
+Static redesign of [aitriz.org](https://www.aitriz.org) for an Altshuller Institute board review. It is the planned replacement for the current Joomla site, and it is not the live site yet. Live `aitriz.org` stays on Joomla + Cloudflare and is not touched by this repo.
 
 Cutover is planned on Cloudflare Pages, with the published files served at the domain root (`https://aitriz.org/`). It is waiting on board sign-off and on the Institute's PayPal hosted buttons. Until those buttons exist, store checkout on this site stays off. Membership signup still links to the current join page on aitriz.org.
 
