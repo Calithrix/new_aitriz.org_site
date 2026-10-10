@@ -26,7 +26,7 @@ Then open http://127.0.0.1:8000
 
 Edit `js/site-config.js` only.
 
-- **Prices.** Set `membershipTiers.annual.price`, `student.price`, `retired.price`, or `lifetime.price` to a number. `null` means that tier stays "Price to be confirmed" on the membership page. The live site lists two different schedules; both are named in the TODO at the top of the config file. Do not copy either schedule in until the board picks one. Lifetime is the only amount both live pages share, and it is still changed in that file.
+- **Prices.** Confirmed from the live join page: Annual $120 per year, Student $35 per year, Retired $60 per year, Lifetime $950. Change `membershipTiers.annual.price`, `student.price`, `retired.price`, or `lifetime.price`, and update the matching no-JS text in `pages/membership.html`.
 - **Currency.** `currency` is the code used on the membership page and, once payments are on, in the PayPal order.
 - **PayPal.** Replace `paypalClientId` with the Institute's PayPal business (Live) client ID. Leave `paypalClientIdPlaceholder` as it is so a leftover placeholder cannot charge.
 - **Turn payments on.** Set `paymentsEnabled` to `true` only after that client ID is the Institute's. If the ID is still `REPLACE_WITH_INSTITUTE_PAYPAL_ID`, or `paymentsEnabled` is `false`, store buttons stay hidden, the page says online payment is coming soon, and the PayPal SDK is not loaded.

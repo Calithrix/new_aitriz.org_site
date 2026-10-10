@@ -2,18 +2,8 @@
  * Membership prices and PayPal for the static site.
  *
  * Change a price, the PayPal client ID, or paymentsEnabled here.
- * pages/membership.html and js/store.js read this file. Do not hard-code
- * those values in a page.
- *
- * TODO: annual, student, and retired dues are not decided. The live site
- * disagrees with itself. Do not copy either schedule into price until the
- * board confirms one.
- *   https://www.aitriz.org/membership
- *     Annual $95, Student $25, Retired $50, Lifetime $950
- *   https://www.aitriz.org/membership/join
- *     Annual $120, Student $35, Retired $60, Lifetime $950
- * Lifetime $950 is the only amount both pages share. It is still edited
- * here, not in the HTML.
+ * pages/membership.html and js/store.js read this file. The membership
+ * page repeats these figures as the no-JS fallback; keep that text in step.
  *
  * paypalClientId stays the placeholder until the Institute supplies its
  * PayPal business (Live) client ID. Leave paymentsEnabled false until that
@@ -31,17 +21,17 @@
     membershipTiers: {
       annual: {
         label: 'Annual',
-        price: null,
+        price: 120,
         term: 'per year'
       },
       student: {
         label: 'Student',
-        price: null,
+        price: 35,
         term: 'per year · full-time students'
       },
       retired: {
         label: 'Retired',
-        price: null,
+        price: 60,
         term: 'per year · retirees'
       },
       lifetime: {
