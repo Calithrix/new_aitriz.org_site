@@ -3,6 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    This file is served for a missing URL at any depth, and the address
+    bar stays on that URL. Relative links would then miss css/ and pages/.
+    A root-absolute path would also miss the GitHub Pages subpath
+    /new_aitriz.org_site/. Write <base> while the page is still parsing,
+    before any relative URL, so the stylesheet, logo, and nav all resolve
+    from the real site root on both hosts.
+  -->
+  <script>
+    (function () {
+      var root = "/new_aitriz.org_site";
+      var path = location.pathname;
+      var onPreview = path === root || path.indexOf(root + "/") === 0;
+      var prefix = onPreview ? root + "/" : "/";
+      document.write('<base href="' + location.origin + prefix + '">');
+    })();
+  </script>
   <link rel="canonical" href="https://aitriz.org/404.html">
   <meta name="robots" content="noindex">
   <title>Page not found — The Altshuller Institute for TRIZ Studies</title>
