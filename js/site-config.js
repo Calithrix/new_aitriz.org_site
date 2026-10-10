@@ -6,9 +6,12 @@
  * page repeats these figures as the no-JS fallback; keep that text in step.
  *
  * paypalClientId stays the placeholder until the Institute supplies its
- * PayPal business (Live) client ID. Leave paymentsEnabled false until that
- * ID is real. While either check fails, store buttons stay hidden and the
- * PayPal SDK is not loaded.
+ * PayPal business (Live) client ID. Each store item's hostedButtonId
+ * stays REPLACE_ME until that item's hosted button exists.
+ * Leave paymentsEnabled false until both are real. While payments are
+ * off, or an item's button ID is still the placeholder, that item shows
+ * "Online payment coming soon" and the hosted-buttons SDK is not loaded
+ * for it. See docs/paypal-hosted-buttons.md.
  */
 (function (window, document) {
   var siteConfig = {
@@ -18,6 +21,8 @@
     paypalClientId: 'REPLACE_WITH_INSTITUTE_PAYPAL_ID',
     // Leave this sentinel. A client ID that still matches it cannot charge.
     paypalClientIdPlaceholder: 'REPLACE_WITH_INSTITUTE_PAYPAL_ID',
+    // Leave this sentinel. A hosted button ID that still matches it is not rendered.
+    hostedButtonIdPlaceholder: 'REPLACE_ME',
     membershipTiers: {
       annual: {
         label: 'Annual',
@@ -39,6 +44,39 @@
         price: 950,
         term: 'one-time, never renew'
       }
+    },
+    storeButtons: {
+      'innovation-algorithm': { hostedButtonId: 'REPLACE_ME' },
+      'innovation-algorithm-hard-cover': { hostedButtonId: 'REPLACE_ME' },
+      'and-suddenly-the-inventor-appeared': { hostedButtonId: 'REPLACE_ME' },
+      'creativity-as-an-exact-science': { hostedButtonId: 'REPLACE_ME' },
+      '40-principles-first-edition': { hostedButtonId: 'REPLACE_ME' },
+      '40-principles-extended-edition': { hostedButtonId: 'REPLACE_ME' },
+      'ballad-of-the-stars': { hostedButtonId: 'REPLACE_ME' },
+      'innovation-tools-handbook': { hostedButtonId: 'REPLACE_ME' },
+      'triz-right-solution-right-time': { hostedButtonId: 'REPLACE_ME' },
+      'the-ideal-result': { hostedButtonId: 'REPLACE_ME' },
+      '40-inventive-principles': { hostedButtonId: 'REPLACE_ME' },
+      'hands-on-systematic-innovation': { hostedButtonId: 'REPLACE_ME' },
+      'da-vinci-and-the-40-answers': { hostedButtonId: 'REPLACE_ME' },
+      'triz-systematic-innovation-in-manufacturing': { hostedButtonId: 'REPLACE_ME' },
+      'triz-theory-of-inventive-problem-solving': { hostedButtonId: 'REPLACE_ME' },
+      'triz-technology-for-innovation': { hostedButtonId: 'REPLACE_ME' },
+      'triz-for-six-sigma': { hostedButtonId: 'REPLACE_ME' },
+      'using-triz-for-anti-virus-development': { hostedButtonId: 'REPLACE_ME' },
+      'triz-matrix': { hostedButtonId: 'REPLACE_ME' },
+      'trizcontrasolve': { hostedButtonId: 'REPLACE_ME' },
+      'ia-triz-technology-combo': { hostedButtonId: 'REPLACE_ME' },
+      '3-book-set': { hostedButtonId: 'REPLACE_ME' },
+      'success-factor': { hostedButtonId: 'REPLACE_ME' },
+      'teaching-21st-century-skills': { hostedButtonId: 'REPLACE_ME' },
+      'trizcon2025-video-review': { hostedButtonId: 'REPLACE_ME' },
+      'trizcon2023-video-review': { hostedButtonId: 'REPLACE_ME' },
+      'associate-certification-fee-membership': { hostedButtonId: 'REPLACE_ME' },
+      'associate-certification-fee-tulane': { hostedButtonId: 'REPLACE_ME' },
+      'legacy-supporter-annual': { hostedButtonId: 'REPLACE_ME' },
+      'advertise-e-newsletter': { hostedButtonId: 'REPLACE_ME' },
+      'donation-20': { hostedButtonId: 'REPLACE_ME' }
     }
   };
 

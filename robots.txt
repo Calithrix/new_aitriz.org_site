@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /reviews/
+Disallow: /docs/
+Disallow: /backups/
+Disallow: /old-site-backup/
+
+Sitemap: https://aitriz.org/sitemap.xml

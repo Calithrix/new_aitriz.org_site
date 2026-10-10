@@ -1,121 +1,114 @@
 /*
- * General Store — PayPal buy buttons
+ * General Store — PayPal hosted buttons
  *
- * The client ID, currency, and paymentsEnabled flag live in
- * js/site-config.js. This file does not keep a second copy.
+ * Prices, shipping, and tax stay in the Institute's PayPal account.
+ * This file never reads a page price and never calls createOrder.
  *
- * The PayPal SDK is loaded only when paymentsEnabled is true, the
- * client ID is not the placeholder, and currency is a 3-letter code.
- * Otherwise every buy control stays hidden and the card says
- * "Online payment coming soon".
+ * Documented integration (recommended HTML, low-code buy button):
+ * https://developer.paypal.com/guides/low-code-buy-button
+ * One script for the page, query unchanged except the account values
+ * PayPal puts in that snippet:
+ *   client-id, components=hosted-buttons, currency
+ * Then, for each product:
+ *   paypal.HostedButtons({ hostedButtonId }).render("#paypal-container-ID")
  *
- * Every card in pages/store.html carries a data-amount in USD with
- * two decimals (for example "49.00") that mirrors its visible catalog
- * price. Those catalog prices are not membership dues. Cards without
- * a valid data-amount are never charged. Sold-out items have no
- * .store-buy block at all.
+ * The SDK loads only when paymentsEnabled is true, paypalClientId is
+ * not the placeholder, currency is a 3-letter code, and at least one
+ * item has a hosted button ID other than REPLACE_ME. Every other card
+ * stays on "Online payment coming soon."
  */
 (function () {
   var COMING_SOON = 'Online payment coming soon';
-  var FALLBACK_PLACEHOLDER = 'REPLACE_WITH_INSTITUTE_PAYPAL_ID';
+  var CLIENT_PLACEHOLDER = 'REPLACE_WITH_INSTITUTE_PAYPAL_ID';
+  var BUTTON_PLACEHOLDER = 'REPLACE_ME';
 
   function config() {
     return window.SITE_CONFIG || null;
   }
 
-  function paymentsAreLive(cfg) {
+  function isRealToken(value, placeholder) {
+    if (typeof value !== 'string') return false;
+    var trimmed = value.trim();
+    if (!trimmed || trimmed === placeholder) return false;
+    return /^[A-Za-z0-9_-]+$/.test(trimmed);
+  }
+
+  function paymentsReady(cfg) {
     if (!cfg || cfg.paymentsEnabled !== true) return false;
-    var id = typeof cfg.paypalClientId === 'string' ? cfg.paypalClientId.trim() : '';
-    var placeholder = typeof cfg.paypalClientIdPlaceholder === 'string' && cfg.paypalClientIdPlaceholder.trim()
+    var clientPlaceholder = typeof cfg.paypalClientIdPlaceholder === 'string' && cfg.paypalClientIdPlaceholder.trim()
       ? cfg.paypalClientIdPlaceholder.trim()
-      : FALLBACK_PLACEHOLDER;
+      : CLIENT_PLACEHOLDER;
     var currency = typeof cfg.currency === 'string' ? cfg.currency.trim() : '';
-    if (!id || id === placeholder) return false;
+    if (!isRealToken(cfg.paypalClientId, clientPlaceholder)) return false;
     if (!/^[A-Z]{3}$/.test(currency)) return false;
     return true;
   }
 
-  function isChargeableAmount(amount) {
-    return typeof amount === 'string' && /^\d+\.\d{2}$/.test(amount) && amount !== '0.00';
+  function hostedButtonId(cfg, sku) {
+    if (!cfg || !cfg.storeButtons || !sku) return '';
+    var entry = cfg.storeButtons[sku];
+    if (!entry) return '';
+    var placeholder = typeof cfg.hostedButtonIdPlaceholder === 'string' && cfg.hostedButtonIdPlaceholder.trim()
+      ? cfg.hostedButtonIdPlaceholder.trim()
+      : BUTTON_PLACEHOLDER;
+    if (!isRealToken(entry.hostedButtonId, placeholder)) return '';
+    return entry.hostedButtonId.trim();
   }
 
   function showComingSoon(buy) {
-    var button = buy.querySelector('.paypal-buy');
     var slot = buy.querySelector('.paypal-slot');
     var status = buy.querySelector('.store-checkout-status');
-    if (button) {
-      button.hidden = true;
-      button.disabled = true;
+    if (slot) {
+      slot.hidden = true;
+      slot.removeAttribute('id');
+      slot.textContent = '';
     }
-    if (slot) slot.hidden = true;
     if (!status) return;
     status.hidden = false;
     status.textContent = COMING_SOON;
   }
 
-  function mountSdkButton(buy, paypal, currency) {
-    var amount = buy.getAttribute('data-amount') || '';
-    var title = buy.getAttribute('data-title') || 'General Store item';
-    if (!isChargeableAmount(amount)) {
-      showComingSoon(buy);
-      return;
-    }
-
-    var button = buy.querySelector('.paypal-buy');
+  function mountHostedButton(buy, buttonId) {
     var slot = buy.querySelector('.paypal-slot');
     var status = buy.querySelector('.store-checkout-status');
-    if (!slot || !paypal || typeof paypal.Buttons !== 'function') {
+    if (!slot || !window.paypal || typeof window.paypal.HostedButtons !== 'function') {
       showComingSoon(buy);
       return;
     }
-
-    if (button) {
-      button.hidden = true;
-      button.disabled = true;
-    }
-    if (status) status.hidden = true;
+    var containerId = 'paypal-container-' + buttonId;
+    slot.id = containerId;
     slot.hidden = false;
-
-    paypal.Buttons({
-      style: {
-        layout: 'vertical',
-        color: 'gold',
-        shape: 'rect',
-        label: 'buynow'
-      },
-      createOrder: function (data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            description: title,
-            amount: { currency_code: currency, value: amount }
-          }]
+    if (status) status.hidden = true;
+    try {
+      var rendered = window.paypal.HostedButtons({
+        hostedButtonId: buttonId
+      }).render('#' + containerId);
+      if (rendered && typeof rendered.catch === 'function') {
+        rendered.catch(function () {
+          showComingSoon(buy);
         });
-      },
-      onError: function () {
-        showComingSoon(buy);
       }
-    }).render(slot).catch(function () {
+    } catch (err) {
       showComingSoon(buy);
-    });
+    }
   }
 
   function loadSdk(clientId, currency) {
     return new Promise(function (resolve, reject) {
-      if (window.paypal && typeof window.paypal.Buttons === 'function') {
+      if (window.paypal && typeof window.paypal.HostedButtons === 'function') {
         resolve(window.paypal);
         return;
       }
       var script = document.createElement('script');
       script.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId)
-        + '&currency=' + encodeURIComponent(currency)
-        + '&intent=capture&components=buttons';
+        + '&components=hosted-buttons&currency=' + encodeURIComponent(currency);
       script.async = true;
       script.onload = function () {
-        if (window.paypal && typeof window.paypal.Buttons === 'function') resolve(window.paypal);
-        else reject(new Error('PayPal SDK did not initialize'));
+        if (window.paypal && typeof window.paypal.HostedButtons === 'function') resolve(window.paypal);
+        else reject(new Error('PayPal hosted buttons did not initialize'));
       };
       script.onerror = function () {
-        reject(new Error('PayPal SDK failed to load'));
+        reject(new Error('PayPal hosted buttons failed to load'));
       };
       document.head.appendChild(script);
     });
@@ -126,31 +119,20 @@
     if (!buys.length) return;
 
     var cfg = config();
-    if (!paymentsAreLive(cfg)) {
-      for (var i = 0; i < buys.length; i++) showComingSoon(buys[i]);
-      return;
+    var ready = [];
+    for (var i = 0; i < buys.length; i++) {
+      var buttonId = paymentsReady(cfg) ? hostedButtonId(cfg, buys[i].getAttribute('data-sku') || '') : '';
+      if (buttonId) ready.push({ buy: buys[i], buttonId: buttonId });
+      else showComingSoon(buys[i]);
     }
+    if (!ready.length) return;
 
-    var anyChargeable = false;
-    for (var j = 0; j < buys.length; j++) {
-      if (isChargeableAmount(buys[j].getAttribute('data-amount') || '')) anyChargeable = true;
-    }
-    if (!anyChargeable) {
-      for (var n = 0; n < buys.length; n++) showComingSoon(buys[n]);
-      return;
-    }
-
-    var currency = cfg.currency.trim();
-    loadSdk(cfg.paypalClientId.trim(), currency).then(function (paypal) {
-      for (var k = 0; k < buys.length; k++) {
-        try {
-          mountSdkButton(buys[k], paypal, currency);
-        } catch (err) {
-          showComingSoon(buys[k]);
-        }
+    loadSdk(cfg.paypalClientId.trim(), cfg.currency.trim()).then(function () {
+      for (var k = 0; k < ready.length; k++) {
+        mountHostedButton(ready[k].buy, ready[k].buttonId);
       }
     }).catch(function () {
-      for (var m = 0; m < buys.length; m++) showComingSoon(buys[m]);
+      for (var n = 0; n < ready.length; n++) showComingSoon(ready[n].buy);
     });
   }
 
