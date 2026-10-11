@@ -505,9 +505,23 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .nav a[aria-current="page"]::after { left: 0.42rem; right: 0.42rem; }
   .nav .nav-cta { margin-left: 0.2rem; }
 }
-/* Header collapses to the menu button here; page layout changes at 860px below. */
+/* Header collapses to the menu button here; page layout changes at 860px below.
+   The header keeps the sticky positioning it has on desktop, so the menu
+   button stays reachable after scrolling; the open menu hangs from it and
+   scrolls inside itself when it is taller than the viewport. */
 @media (max-width: 900px) {
-  .nav-toggle-label { display: block; }
+  /* In-page targets land below the stuck header. Set on the targets, not as
+     scroll-padding on the root: root scroll-padding makes Chrome scroll the
+     page when the menu checkbox inside the sticky header takes focus. */
+  main [id] { scroll-margin-top: 5.25rem; }
+  .nav-toggle-label { display: block; flex-shrink: 0; }
+  /* Visually hidden rather than display:none so the checkbox stays in the
+     tab order and the menu can be opened from a keyboard. */
+  .nav-toggle {
+    display: block; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+    overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; opacity: 0;
+  }
+  .nav-toggle:focus-visible ~ .nav-toggle-label { outline: 2px solid var(--khaki); outline-offset: 2px; border-radius: var(--radius); }
   .nav {
     position: absolute; left: 0; right: 0; top: 100%;
     background: var(--charcoal-deep);
@@ -515,8 +529,12 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
     padding: 0.5rem 0 0.9rem;
     display: none;
     box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
-  .nav a { font-size: 0.85rem; letter-spacing: 0.06em; padding: 0.85rem 1.4rem; border-radius: 0; }
+  .nav a { font-size: 0.85rem; letter-spacing: 0.06em; padding: 0.85rem 1.4rem; border-radius: 0; flex-shrink: 0; }
   .nav a[aria-current="page"]::after { display: none; }
   .nav a[aria-current="page"] { background: rgba(255,255,255,0.06); }
   .nav .nav-cta { margin: 0.6rem 1.4rem 0; text-align: center; border-radius: var(--radius); }
@@ -525,7 +543,6 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .nav-toggle:checked ~ .nav-toggle-label span::before { transform: translateY(7px) rotate(45deg); }
   .nav-toggle:checked ~ .nav-toggle-label span::after { transform: translateY(-7px) rotate(-45deg); }
   .site-header .wrap { position: static; min-height: 5.25rem; flex-wrap: nowrap; }
-  .site-header { position: relative; }
   .brand { flex-shrink: 1; white-space: normal; }
   .brand img { width: 60px; height: 60px; }
   .brand .brand-text { font-size: 0.95rem; }
@@ -560,6 +577,7 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .prose img.float-right { float: none; width: 180px; margin: 0 0 1rem; }
 }
 @media (max-width: 560px) {
+  main [id] { scroll-margin-top: 4.75rem; }
   .wrap, .wrap-narrow { width: calc(100% - 2rem); }
   .brand-text { font-size: 0.72rem; }
   .site-header .wrap { min-height: 4.75rem; gap: 1rem; }
