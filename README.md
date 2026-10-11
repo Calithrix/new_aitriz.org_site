@@ -54,6 +54,7 @@ pages/*.html        triz, events, learn, membership, library, about, store, than
 css/site.css        single stylesheet, design tokens at the top
 js/site-config.js   membership prices, currency, PayPal client ID, hosted button IDs, payments switch
 js/store.js         PayPal hosted buttons; reads js/site-config.js
+js/nav.js           closes the mobile menu after a link, Escape, or a tap outside
 robots.txt          crawler rules and sitemap location
 sitemap.xml         the eight public pages
 scripts/prepare-cloudflare-pages.sh
