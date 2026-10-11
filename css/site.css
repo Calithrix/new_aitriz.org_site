@@ -360,6 +360,9 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .plan .price.is-pending { font-size: 1.05rem; font-weight: 700; line-height: 1.35; color: var(--muted); }
 .stat strong.is-pending { font-size: 1.35rem; line-height: 1.25; }
 .plan .term { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.plan .plan-options { margin-bottom: 1rem; }
+.plan .plan-options .term { margin-bottom: 0; }
+.plan .plan-or { color: var(--muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0.5rem 0 0; }
 .plan ul { padding-left: 1.1rem; font-size: 0.93rem; margin: 0 0 1.2rem; flex: 1; }
 .plan .btn { align-self: flex-start; }
 
