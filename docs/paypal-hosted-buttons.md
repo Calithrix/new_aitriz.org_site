@@ -86,7 +86,7 @@ Do this only after the buttons exist in the Institute's live PayPal account and 
 
 If `paymentsEnabled` is `false`, or the client ID is still `REPLACE_WITH_INSTITUTE_PAYPAL_ID`, the PayPal script is not loaded at all.
 
-Membership signup is unchanged. It still links to the current join page on aitriz.org. Do not create membership buttons for this step.
+Membership signup is unchanged. It still links to the current join page on aitriz.org. Do not create one-time membership buttons for this step. The one membership item planned is the Annual monthly subscription in the checklist below.
 
 Changing a price later is a change inside that PayPal button, plus the visible price in `pages/store.html`. The page price is display only. It is not what PayPal charges.
 
@@ -132,3 +132,9 @@ Do not create buttons for these. They are marked sold out and have no buy slot:
 
 - Innovation on Demand, shown at $99.00.
 - Systematic (Software) Innovation, shown at $190.00.
+
+### Membership: Annual paid monthly
+
+Annual membership can be paid $120 once a year or $12 per month, the member's choice (Richard, 2026-10-11). The monthly option is for Annual only; Student, Retired, and Lifetime stay one-time.
+
+- `annual-monthly` — Annual membership, monthly billing. This must be a PayPal **subscription plan at $12.00 per month** (a Subscribe button), not a one-time hosted button; a one-set-price buy button would charge $12 once and never again. No shipping. Put the button ID PayPal generates in `membershipButtons['annual-monthly'].subscriptionButtonId` in `js/site-config.js`. Until then it stays `REPLACE_ME` and the membership page renders nothing for it.

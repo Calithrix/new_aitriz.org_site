@@ -12,6 +12,14 @@
  * off, or an item's button ID is still the placeholder, that item shows
  * "Online payment coming soon" and the hosted-buttons SDK is not loaded
  * for it. See docs/paypal-hosted-buttons.md.
+ *
+ * Annual membership has two payment choices (Richard, 2026-10-11): the
+ * annual price once a year, or monthlyPrice every month. Monthly applies
+ * to Annual only. Student, Retired, and Lifetime stay one-time.
+ * membershipButtons['annual-monthly'].subscriptionButtonId is a PayPal
+ * SUBSCRIPTION button (a $12/month plan), not a one-time hosted button.
+ * Nothing renders it while it is REPLACE_ME; membership signup keeps
+ * linking to the join page on aitriz.org.
  */
 (function (window, document) {
   var siteConfig = {
@@ -27,7 +35,10 @@
       annual: {
         label: 'Annual',
         price: 120,
-        term: 'per year'
+        term: 'per year',
+        // Annual only: the member may pay this every month instead of the price above once a year.
+        monthlyPrice: 12,
+        monthlyTerm: 'per month'
       },
       student: {
         label: 'Student',
@@ -77,6 +88,13 @@
       'legacy-supporter-annual': { hostedButtonId: 'REPLACE_ME' },
       'advertise-e-newsletter': { hostedButtonId: 'REPLACE_ME' },
       'donation-20': { hostedButtonId: 'REPLACE_ME' }
+    },
+    // Membership buttons. Unlike storeButtons, the Annual monthly option is a
+    // PayPal SUBSCRIPTION button for a $12/month plan, not a one-time hosted
+    // button. PLACEHOLDER: stays REPLACE_ME, and nothing is rendered for it,
+    // until the Institute creates the plan. See docs/paypal-hosted-buttons.md.
+    membershipButtons: {
+      'annual-monthly': { subscriptionButtonId: 'REPLACE_ME' }
     }
   };
 
@@ -130,9 +148,13 @@
       var heading = el.querySelector('h3');
       var price = el.querySelector('.price');
       var term = el.querySelector('.term');
+      var monthlyPrice = el.querySelector('.price-monthly');
+      var monthlyTerm = el.querySelector('.term-monthly');
       if (heading && tier.label) heading.textContent = tier.label;
       if (term && tier.term) term.textContent = tier.term;
       if (price) fillPrice(price, tier, price.getAttribute('data-membership-format'));
+      if (monthlyTerm && tier.monthlyTerm) monthlyTerm.textContent = tier.monthlyTerm;
+      if (monthlyPrice) fillPrice(monthlyPrice, { price: tier.monthlyPrice }, monthlyPrice.getAttribute('data-membership-format'));
     }
   }
 

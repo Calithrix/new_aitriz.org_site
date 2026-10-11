@@ -90,7 +90,7 @@
             <li>10% discount on all items in the General Store</li>
             <li>10% discount on the annual conference</li>
             <li>Eligibility for Institute certification</li>
-            <li>Plus all privileges of the free membership</li>
+            <li>Plus all privileges of the free 1-month trial</li>
           </ul>
         </div>
       </div>
@@ -101,14 +101,14 @@
         <div class="section-head">
           <p class="kicker">Individual plans</p>
           <h2>Choose a plan</h2>
-          <p>Free membership is a six-month trial that gives you time to enjoy the value of the community; paid plans unlock the archives and discounts.</p>
+          <p>Free membership is a 1-month trial that gives you time to enjoy the value of the community; paid plans unlock the archives and discounts.</p>
         </div>
         <!-- Paid dues are filled from js/site-config.js. The words below are the no-JS fallback. -->
         <div class="plans">
           <div class="plan">
             <h3>Free</h3>
             <p class="price">$0</p>
-            <p class="term">6-month trial, renewable</p>
+            <p class="term">1-month free trial</p>
             <ul>
               <li>Access to community pages</li>
               <li>Submit news, web links, TRIZCON abstracts and training or conference listings</li>
@@ -119,14 +119,24 @@
           </div>
           <div class="plan featured" data-membership-tier="annual">
             <h3>Annual</h3>
-            <p class="price">$120 <small>USD</small></p>
-            <p class="term">per year</p>
+            <!-- Two ways to pay, the member's choice. Monthly billing is for the Annual plan only. -->
+            <div class="plan-options" role="group" aria-label="Annual membership payment options">
+              <div class="plan-option">
+                <p class="price">$120 <small>USD</small></p>
+                <p class="term">per year</p>
+              </div>
+              <p class="plan-or">or</p>
+              <div class="plan-option">
+                <p class="price price-monthly">$12 <small>USD</small></p>
+                <p class="term term-monthly">per month</p>
+              </div>
+            </div>
             <ul>
               <li>Restricted archives of TRIZ materials</li>
               <li>10% discount in the General Store</li>
               <li>10% discount on the annual conference</li>
               <li>Eligible for certification</li>
-              <li>All free-membership privileges</li>
+              <li>All free-trial privileges</li>
             </ul>
             <a class="btn btn-primary ext" href="https://www.aitriz.org/membership/join" target="_blank" rel="noopener">Join now</a>
           </div>
